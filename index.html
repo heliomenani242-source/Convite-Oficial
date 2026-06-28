@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Um Convite Especial ❤️</title>
+
+    <meta property="og:title" content="❤️ Convite Especial ❤️">
+    <meta property="og:description" content="Existe uma pergunta importante esperando por você... ✨">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www-convite-oficial.netlify.app">
+    <meta property="og:image" content="https://www-convite-oficial.netlify.app/capa.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="theme-color" content="#ff758f">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="loader" class="loader-container">
+        <div class="heart-loader"></div>
+    </div>
+
+    <canvas id="particleCanvas"></canvas>
+    <div id="hearts"></div>
+
+    <div class="custom-cursor"></div>
+
+    <main class="container">
+
+        <div class="card active fade-in" id="step1">
+            <div class="progress">1 de 10</div>
+            <div class="emoji">🤔</div>
+            <h1>Investigação Inicial</h1>
+            <p>Existe alguma chance de você ter clicado neste link por acidente?</p>
+            <div class="buttons">
+                <button onclick="nextStep(2)">😅 Sim, meu dedo escorregou</button>
+                <button onclick="nextStep(2)">👀 Não... agora fiquei curiosa</button>
+            </div>
+        </div>
+
+        <div class="card" id="step2">
+            <div class="progress">2 de 10</div>
+            <div class="emoji">🚨</div>
+            <h1>Alerta Importante</h1>
+            <p>Ignorar uma curiosidade pode causar arrependimento futuro. Concorda?</p>
+            <div class="buttons">
+                <button onclick="nextStep(3)">🤭 Concordo</button>
+                <button onclick="nextStep(3)">😎 Vou arriscar</button>
+            </div>
+            <button class="btn-neutral back-btn" onclick="goBack()">⬅ Voltar</button>
+        </div>
+
+        <div class="card" id="step3">
+            <div class="progress">3 de 10</div>
+            <div class="emoji">🍕</div>
+            <h1>Situação Hipotética</h1>
+            <p>Se eu aparecesse com pizza, chocolate e uma conversa interessante, qual seria a chance de eu ganhar sua atenção?</p>
+            <div class="buttons">
+                <button onclick="nextStep(4)">🍕 99%</button>
+                <button onclick="nextStep(4)">🍫 100%</button>
+                <button onclick="nextStep(4)">😂 Depende da conversa</button>
+            </div>
+            <button class="btn-neutral back-btn" onclick="goBack()">⬅ Voltar</button>
+        </div>
+
+        <div class="card" id="step4">
+            <div class="progress">4 de 10</div>
+            <div class="emoji">🕵️</div>
+            <h1>Investigação Secreta</h1>
+            <p>Você é naturalmente interessante ou fez algum curso secreto?</p>
+            <div class="buttons">
+                <button onclick="nextStep(5)">😌 Nasci assim</button>
+                <button onclick="nextStep(5)">🤫 Segredo de estado</button>
+            </div>
+            <button class="btn-neutral back-btn" onclick="goBack()">⬅ Voltar</button>
+        </div>
+
+        <div class="card" id="step5">
+            <div class="progress">5 de 10</div>
+            <div class="emoji">❤️</div>
+            <h1>Pergunta do Coração</h1>
+            <p>Você acredita que algumas pessoas aparecem na nossa vida por um motivo especial?</p>
+            <div class="buttons">
+                <button onclick="nextStep(6)">❤️ Sim</button>
+                <button onclick="nextStep(6)">✨ Talvez</button>
+                <button onclick="nextStep(6)">😊 Gosto da ideia</button>
+            </div>
+            <button class="btn-neutral back-btn" onclick="goBack()">⬅ Voltar</button>
+        </div>
+
+        <div class="card" id="step6">
+            <div class="progress">6 de 10</div>
+            <div class="emoji">☕</div>
+            <h1>Escolha Difícil</h1>
+            <p>O que parece mais agradável?</p>
+            <div class="buttons">
+                <button onclick="nextStep(7)">☕ Café</button>
+                <button onclick="nextStep(7)">🍨 Sorvete</button>
+                <button onclick="nextStep(7)">🌅 Passeio</button>
+            </div>
+            <button class="btn-neutral back-btn" onclick="goBack()">⬅ Voltar</button>
+        </div>
+
+        <div class="card" id="step7">
+            <div class="progress">7 de 10</div>
+            <div class="emoji">🎲</div>
+            <h1>Jogo da Vida</h1>
+            <p>Se conhecer alguém melhor fosse um jogo, você aceitaria jogar uma partida?</p>
+            <div class="buttons">
+                <button onclick="nextStep(8)">🎲 Sim</button>
+                <button onclick="nextStep(8)">😄 Talvez</button>
+                <button onclick="nextStep(8)">👀 Estou ouvindo</button>
+            </div>
+            <button class="btn-neutral back-btn" onclick="goBack()">⬅ Voltar</button>
+        </div>
+
+        <div class="card" id="step8">
+            <div class="progress">8 de 10</div>
+            <div class="emoji">🌹</div>
+            <h1>Reflexão</h1>
+            <p>Você concorda que algumas histórias começam com um simples convite?</p>
+            <div class="buttons">
+                <button onclick="nextStep(9)">🌹 Concordo</button>
+                <button onclick="nextStep(9)">😊 Faz sentido</button>
+            </div>
+            <button class="btn-neutral back-btn" onclick="goBack()">⬅ Voltar</button>
+        </div>
+
+        <div class="card" id="step9">
+            <div class="progress">9 de 10</div>
+            <div class="emoji">💌</div>
+            <h1>Última Pergunta</h1>
+            <p>Você chegou até aqui porque...</p>
+            <div class="buttons">
+                <button onclick="nextStep(10)">❤️ Fiquei curiosa</button>
+                <button onclick="nextStep(10)">😄 Estava divertida</button>
+                <button onclick="nextStep(10)">😉 Gostei de quem enviou</button>
+            </div>
+            <button class="btn-neutral back-btn" onclick="goBack()">⬅ Voltar</button>
+        </div>
+
+        <section class="invitation-screen hidden" id="step10" aria-label="Convite oficial">
+            <div class="invitation-content">
+                <div class="progress"></div>
+                <div class="emoji huge-emoji">❤️</div>
+                <h1>Convite Oficial</h1>
+                <div class="final-message">
+                    <div id="typewriter-container"></div>
+                </div>
+                <div id="final-actions" class="buttons final-actions hidden">
+                    <button class="btn-success" onclick="acceptInvitation()">💚 Vamos!</button>
+                    <button class="btn-success" onclick="acceptInvitation('fun')">😄 Eu topo, claro!</button>
+                </div>
+            </div>
+        </section>
+
+        <div class="card final-card" id="step11-yes">
+            <div class="emoji huge-emoji">❤️</div>
+            <h1>Fico muito feliz!</h1>
+            <p>Agora só falta combinarmos o dia.😊</p>
+            <p id="final-echo" class="final-echo"></p>
+
+            <div class="schedule-box">
+                <label for="chosen-date">Escolha uma data:</label>
+                <input id="chosen-date" type="date">
+
+                <label for="chosen-time">Horário</label>
+                <input id="chosen-time" type="time">
+
+                <button type="button" id="whatsapp-button" class="whatsapp-button">Concluir</button>
+            </div>
+        </div>
+
+        <div class="card" id="step11-maybe">
+            <div class="emoji">😊</div>
+            <h1>Sem problemas</h1>
+            <p>A proposta continua de pé. Quando você quiser, será um prazer.</p>
+        </div>
+
+    </main>
+
+    <div class="story-rail" aria-hidden="true">
+        <span id="story-status">A história começou</span>
+        <div class="story-bar">
+            <span id="story-progress-fill"></span>
+        </div>
+    </div>
+
+    <audio id="sound-click" src="https://cdn.pixabay.com/audio/2022/03/15/audio_6f4fbf8f7f.mp3" preload="auto"></audio>
+    <audio id="sound-success" src="https://cdn.pixabay.com/audio/2022/03/15/audio_6f4fbf8f7f.mp3" preload="auto"></audio>
+    <audio id="bg-music" preload="auto" autoplay loop playsinline crossorigin="anonymous" src="./YTMP3GG_YouTube_NX-Zero-Cedo-Ou-Tarde_Media_XdglM81b4g8_007_128k.mp3"></audio>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
